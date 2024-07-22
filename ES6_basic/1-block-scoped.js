@@ -3,8 +3,7 @@ export default function taskBlock(trueOrFalse) {
     const task2 = true;
   
     if (trueOrFalse) {
-      let mrstring = 'HiFriends!';
-      return mrstring
+      console.log('Hello Friends!');
     }
   
     return [task, task2];
