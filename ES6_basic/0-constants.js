@@ -1,6 +1,6 @@
 export function taskFirst() {
   const task = 'I prefer const when I can.';
-return task;
+  return task;
 }
 
 export function getLast() {
@@ -12,4 +12,4 @@ export function taskNext() {
   combination += getLast();
 
   return combination;
- }
+}
