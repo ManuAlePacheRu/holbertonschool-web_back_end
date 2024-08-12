@@ -7,6 +7,7 @@ import typing
 
 
 def sum_mixed_list(mxd_list: typing.List[typing.Union[int, float]]) -> float:
+
     """
     Calculate the sum of a list containing integers and floating-point numbers.
 
