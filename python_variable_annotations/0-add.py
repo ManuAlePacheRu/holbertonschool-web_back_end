@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 def sum(a: float, b: float) -> float:
     """
     Calculate the sum of two floating-point numbers.
