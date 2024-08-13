@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
-import typing
 
 """
 Модуль для преобразования пары ключ-значение в кортеж с
 возведённым в квадрат значением.
 """
+
+import typing
 
 
 def to_kv(k: str, v: typing.Union[int, float]) -> typing.Tuple[str, float]:
