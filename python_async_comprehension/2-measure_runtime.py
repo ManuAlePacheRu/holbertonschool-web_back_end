@@ -11,7 +11,7 @@ import time
 async_comp = __import__('1-async_comprehension').async_comprehension
 
 
-async def measure_runtime():
+async def measure_runtime() -> float:
     """ measure runtime """
     s_time = time.time()
     tasks = []
