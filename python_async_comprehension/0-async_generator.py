@@ -6,9 +6,11 @@
 
 import asyncio
 import random
+import typing
 
 
-async def async_generator():
-    for i in range (10):
+async def async_generator() -> typing.Generator[float, None, None]:
+    """ async comprehension """
+    for i in range(10):
         await asyncio.sleep(1)
         yield random.uniform(0, 10)
