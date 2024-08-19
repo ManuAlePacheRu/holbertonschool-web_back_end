@@ -1,10 +1,9 @@
 #!/usr/bin/env python3
 
 """
-
+    This is an async comprehension
 """
 
-import typing
 import asyncio
 import random
 
