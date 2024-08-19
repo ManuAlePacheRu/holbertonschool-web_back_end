@@ -5,7 +5,6 @@
 """
 
 import asyncio
-import typing
 import time
 
 async_comp = __import__('1-async_comprehension').async_comprehension
@@ -13,12 +12,12 @@ async_comp = __import__('1-async_comprehension').async_comprehension
 
 async def measure_runtime() -> float:
     """ measure runtime """
-    s_time = time.time()
+    start_time = time.time()
 
     tasks = [async_comp() for i in range(4)]
 
     await asyncio.gather(*tasks)
 
-    e_time = time.time()
+    end_time = time.time()
 
-    return s_time - e_time
+    return end_time - start_time
