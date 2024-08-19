@@ -16,7 +16,7 @@ async def measure_runtime() -> float:
     tasks = []
     s_time = time.time()
     for i in range(4):
-        asyncio.gather(async_comp())
+        tasks.append(async_comp())
     await asyncio.gather(*tasks)
 
     e_time = time.time()
