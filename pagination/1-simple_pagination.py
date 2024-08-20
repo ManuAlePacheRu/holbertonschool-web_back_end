@@ -1,7 +1,14 @@
 import csv
 import math
 from typing import List
-index_range = __import__('0-simple_helper_function').index_range
+
+def index_range(page, page_size):
+
+    """ Index Range """
+
+    start_index = (page - 1) * page_size
+    end_index = page * page_size
+    return (start_index, end_index)
 
 class Server:
     """Server class to paginate a database of popular baby names.
@@ -24,9 +31,11 @@ class Server:
 
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
             """ Get Page """
-            assert page > 0
-            assert page_size > 0
-            if page > page_size or page_size < page:
+            assert isinstance(page, int) and page >= 0
+            assert isinstance(page_size, int) and page_size> 0
+            x, z = index_range(page, page_size)
+            dat = self.dataset()
+            if len(dat) < z:
                 return []
-            else:
-                index_range(page, page_size)
+            ret_dat = dat[x:z]
+            return ret_dat
