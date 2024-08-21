@@ -45,7 +45,7 @@ class Server:
             return []
         ret_dat = dat[x:z]
         return ret_dat
-    
+
     def get_hyper(self, page: int = 1, page_size: int = 10):
 
         """ Hypermedia Pagination """
