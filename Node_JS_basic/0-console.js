@@ -1,4 +1,4 @@
-/* function that prints in STDOUT the string argument. */
+/* function that prints in STDOUT. */
 
 const displayMessage = (str) => console.log(str);
 
