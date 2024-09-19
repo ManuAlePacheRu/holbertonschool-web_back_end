@@ -1,9 +1,9 @@
-const fs = require('fs').promises;
+const fs = require('fs');
 
-async function countStudents(path) {
+const countStudents = (path) => {
   try {
-    const data = await fs.readFile(path, 'utf-8');
-    const rows = data.split('\n').filter((row) => row.trim() !== '');
+    const data = fs.readFileSync(path, 'utf-8').trim();
+    const rows = data.split('\n');
 
     const students = rows.slice(1);
     console.log(`Number of students: ${students.length}`);
@@ -12,9 +12,8 @@ async function countStudents(path) {
 
     for (const student of students) {
       const records = student.split(',');
-      const field = records[records.length - 1].trim();
-      const firstname = records[0].trim();
-
+      const field = records[records.length - 1];
+      const firstname = records[0];
       if (!fields[field]) {
         fields[field] = [];
       }
@@ -27,6 +26,10 @@ async function countStudents(path) {
   } catch (error) {
     throw new Error('Cannot load the database');
   }
-}
+};
 
 module.exports = countStudents;
+
+/* const file = './database.csv';
+
+countStudents(file); */
